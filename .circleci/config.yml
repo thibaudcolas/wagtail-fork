@@ -46,10 +46,10 @@ jobs:
           paths:
             - node_modules
           key: frontend-v1-{{ checksum "package-lock.json" }}
+      - run: npm run dist
       - run: npm run lint:js
       - run: npm run lint:css
       - run: npm run test:unit:coverage -- --runInBand
-      - run: npm run dist
       - run: bash <(curl -s https://codecov.io/bash) -F frontend
 
   nightly-build:
