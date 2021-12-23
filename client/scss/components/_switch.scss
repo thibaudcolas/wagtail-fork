@@ -3,7 +3,7 @@ $switch-height: 20px;
 $switch-border: 2px;
 $switch-outline: 3px;
 
-$switch-border-radius: ($switch-height + $switch-border * 2) / 2;
+$switch-border-radius: ($switch-height + $switch-border * 2) * 0.5;
 $switch-outline-radius: $switch-border-radius + $switch-outline;
 
 // All the greys in Wagtail are really dark or really bright

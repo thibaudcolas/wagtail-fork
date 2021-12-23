@@ -180,7 +180,7 @@
         top: $object-title-height;
         margin-top: 0;
         margin-bottom: -1em;
-        padding: 1em ($grid-gutter-width / 2) 1em 3em;
+        padding: 1em $grid-gutter-width * 0.5 1em 3em;
         opacity: 1;
 
         .icon-help {

@@ -347,7 +347,7 @@ $positions: (
 
         .#{$namespace}-userbar-items:after {
             #{$vertical}: 2px;
-            #{$horizontal}: $size-home-button / 2 - $width-arrow / 2;
+            #{$horizontal}: $size-home-button * 0.5 - $width-arrow * 0.5;
             border-#{$arrow}-color: $color-grey-1;
 
             @if $vertical == 'bottom' {

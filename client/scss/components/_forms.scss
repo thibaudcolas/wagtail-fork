@@ -347,7 +347,7 @@ li.inline .field {
 // solve gutter issues of inline fields
 ul.inline li:first-child,
 li.inline:first-child {
-    margin-left: -$grid-gutter-width / 2;
+    margin-left: -$grid-gutter-width * 0.5;
 }
 
 // search-bars

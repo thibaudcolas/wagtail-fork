@@ -1,15 +1,15 @@
 .c-sf-add-panel {
     position: relative;
-    padding: $grid-gutter-width / 4
+    padding: $grid-gutter-width * 0.25
         0
         $grid-gutter-width;
     border-radius: $border-radius;
     user-select: none;
 
     @media (min-width: $screen-l-min) {
-        padding: $grid-gutter-width / 4
+        padding: $grid-gutter-width * 0.25
             $grid-gutter-width * 2
-            $add-button-size - $grid-gutter-width / 2;
+            $add-button-size - $grid-gutter-width * 0.5;
     }
 
     &__group-title {
@@ -22,7 +22,7 @@
         flex-flow: row wrap;
         margin-left: -$add-panel-gutter;
         margin-right: -$add-panel-gutter;
-        margin-bottom: $grid-gutter-width / 2;
+        margin-bottom: $grid-gutter-width * 0.5;
 
         &:last-child {
             margin-bottom: 0;

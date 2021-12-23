@@ -82,7 +82,7 @@
     .meta {
         float: right;
         text-align: right;
-        padding: 7px $grid-gutter-width / 2;
+        padding: 7px $grid-gutter-width * 0.5;
         font-size: 0.85em;
 
         p {
