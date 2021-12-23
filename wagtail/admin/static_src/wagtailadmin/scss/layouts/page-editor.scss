@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:map";
+
 @import 'wagtailadmin/scss/helpers';
 
 .page-editor {
@@ -222,7 +225,7 @@
             text-shadow: none;
             font-family: wagtail;
             text-transform: none;
-            content: map-get($icons, 'arrow-down');
+            content: map.get($icons, 'arrow-down');
             text-align: center;
             display: block;
             position: absolute;
@@ -320,7 +323,7 @@
     // special panel for the publishing fields, requires a bit more pizzazz
     &.publishing {
         > .title-wrapper:before {
-            content: map-get($icons, 'date');
+            content: map.get($icons, 'date');
             font-size: 1.8rem;
             line-height: 1.4em;
             width: 1.4em;
@@ -329,7 +332,7 @@
 
     &.privacy {
         > .title-wrapper:before {
-            content: map-get($icons, 'view');
+            content: map.get($icons, 'view');
         }
     }
 
@@ -393,7 +396,7 @@
                 }
 
                 &:hover:before {
-                    background-color: darken($color-salmon, 5%);
+                    background-color: color.adjust($color-salmon, $lightness: -5%);
                 }
             }
         }
@@ -410,7 +413,7 @@
 
         .title-wrapper {
             &:before {
-                content: map-get($icons, 'collapse-up');
+                content: map.get($icons, 'collapse-up');
                 cursor: pointer;
             }
         }
@@ -418,7 +421,7 @@
         &.collapsed {
             .title-wrapper {
                 &:before {
-                    content: map-get($icons, 'collapse-down');
+                    content: map.get($icons, 'collapse-down');
                 }
             }
         }
@@ -472,8 +475,8 @@ footer .preview {
             height: 3em;
         }
 
-        background-color: lighten($color-grey-2, 10%);
-        border-color: lighten($color-grey-2, 10%);
+        background-color: color.adjust($color-grey-2, $lightness: 10%);
+        border-color: color.adjust($color-grey-2, $lightness: 10%);
 
         &:hover {
             background-color: $color-grey-2;
@@ -486,8 +489,8 @@ footer .preview {
         input[type=submit],
         button,
         .button {
-            background-color: lighten($color-grey-2, 10%);
-            border-color: lighten($color-grey-2, 10%);
+            background-color: color.adjust($color-grey-2, $lightness: 10%);
+            border-color: color.adjust($color-grey-2, $lightness: 10%);
 
             &:hover {
                 background-color: $color-grey-2;
@@ -497,7 +500,7 @@ footer .preview {
 
         ul,
         .dropdown-toggle {
-            background-color: lighten($color-grey-2, 10%);
+            background-color: color.adjust($color-grey-2, $lightness: 10%);
         }
 
         .dropdown-toggle:hover,

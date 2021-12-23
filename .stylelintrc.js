@@ -6,6 +6,5 @@ module.exports = {
     'no-descending-specificity': null,
     // Incompatible with the icon font setup – to be enforced once the icon font is removed.
     'font-family-no-missing-generic-family-keyword': null,
-    'scss/no-global-function-names': null,
   },
 };

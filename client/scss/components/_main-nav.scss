@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .nav-wrapper {
     position: relative;
     margin-left: -$menu-width;
@@ -260,7 +262,7 @@
             font-family: wagtail;
             font-weight: 200;
             text-transform: none;
-            content: map-get($icons, 'search');
+            content: map.get($icons, 'search');
             display: block;
             height: 100%;
             line-height: 3.3em;

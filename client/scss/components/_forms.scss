@@ -1,3 +1,4 @@
+@use "sass:map";
 // stylelint-disable scss/comment-no-empty
 // These are the generic stylings for forms of any type.
 // If you're styling something specific to the page editing interface,
@@ -94,7 +95,7 @@ select::-ms-expand {
         bottom: 0;
         width: 1.5em;
         font-family: wagtail;
-        content: map-get($icons, 'arrow-down');
+        content: map.get($icons, 'arrow-down');
         border: 1px solid $color-input-border;
         border-width: 0 0 0 1px;
         text-align: center;
@@ -247,19 +248,19 @@ label.required:after {
 .date_field,
 .date_time_field {
     .input:before {
-        content: map-get($icons, 'date');
+        content: map.get($icons, 'date');
     }
 }
 
 .time_field {
     .input:before {
-        content: map-get($icons, 'time');
+        content: map.get($icons, 'time');
     }
 }
 
 .url_field {
     .input:before {
-        content: map-get($icons, 'link');
+        content: map.get($icons, 'link');
     }
 }
 

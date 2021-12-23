@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:string";
+
 @import 'wagtailadmin/scss/helpers';
 
 // =============================================================================
@@ -70,13 +74,13 @@ $positions: (
 
 @each $icon, $content in $icons {
     .#{$namespace}-icon-#{$icon}:before {
-        content: quote(#{$content});
+        content: string.quote(#{$content});
     }
 }
 
 @each $icon, $content in $icons-after {
     .#{$namespace}-icon-#{$icon}:after {
-        content: quote(#{$content});
+        content: string.quote(#{$content});
     }
 }
 
@@ -247,7 +251,7 @@ $positions: (
     }
 
     & + & {
-        border-top: 1px solid darken($color-grey-1, 3%);
+        border-top: 1px solid color.adjust($color-grey-1, $lightness: -3%);
     }
 
 
@@ -318,9 +322,9 @@ $positions: (
 // =============================================================================
 
 @each $pos, $attrs in $positions {
-    $vertical: map-get($attrs, vertical);
-    $horizontal: map-get($attrs, horizontal);
-    $arrow: map-get($attrs, arrow);
+    $vertical: map.get($attrs, vertical);
+    $horizontal: map.get($attrs, horizontal);
+    $arrow: map.get($attrs, arrow);
 
     .#{$namespace}-userbar--#{$pos} {
         #{$vertical}: $position;

@@ -1,3 +1,4 @@
+@use "sass:string";
 // The wagtail font isn't available in WOFF2, so a @font-face is set here without a mixin.
 @font-face {
     font-family: 'wagtail';
@@ -52,13 +53,13 @@
 
 @each $icon, $content in $icons {
     .icon-#{$icon}:before {
-        content: quote(#{$content});
+        content: string.quote(#{$content});
     }
 }
 
 @each $icon, $content in $icons-after {
     .icon-#{$icon}:after {
-        content: quote(#{$content});
+        content: string.quote(#{$content});
     }
 }
 
