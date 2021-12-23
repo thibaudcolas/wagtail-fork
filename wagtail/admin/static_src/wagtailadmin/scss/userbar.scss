@@ -2,7 +2,8 @@
 @use "sass:map";
 @use "sass:string";
 
-@import 'wagtailadmin/scss/helpers';
+@import '../../../../../client/scss/settings';
+@import '../../../../../client/scss/tools';
 
 // =============================================================================
 // Variables

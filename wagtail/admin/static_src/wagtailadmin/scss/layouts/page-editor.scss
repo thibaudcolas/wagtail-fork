@@ -1,7 +1,8 @@
 @use "sass:color";
 @use "sass:map";
 
-@import 'wagtailadmin/scss/helpers';
+@import '../../../../../client/scss/settings';
+@import '../../../../../client/scss/tools';
 
 .page-editor {
     .content-wrapper {
