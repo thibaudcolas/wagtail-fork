@@ -67,9 +67,6 @@ $switch-color-middle-grey: #777;
 
     [type=checkbox]:disabled + &__toggle::after {
         opacity: 0.5;
-    }
-
-    [type=checkbox]:disabled + &__toggle::after {
         box-shadow: none;
     }
 

@@ -214,6 +214,7 @@
         }
     }
 
+    // stylelint-disable-next-line no-duplicate-selectors
     &:hover {
         background-color: $color-button-hover;
         color: $color-white;
@@ -300,12 +301,6 @@
 
     &.button-nostroke {
         border: 0;
-    }
-
-    &.button--icon {
-        .icon {
-            @include svg-icon(1.5em);
-        }
     }
 
     &.button-strokeonhover {

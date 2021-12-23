@@ -508,6 +508,7 @@ body.explorer-open {
     z-index: 5;
 }
 
+// stylelint-disable-next-line no-duplicate-selectors
 .nav-wrapper {
     z-index: 2;
 }
@@ -520,6 +521,7 @@ body.explorer-open {
 // .content-wrapper {
 // z-index: 3;
 // }
+// stylelint-disable-next-line no-duplicate-selectors
 .nav-submenu {
     z-index: 6;
 }

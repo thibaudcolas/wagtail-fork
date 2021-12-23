@@ -1,3 +1,4 @@
+// stylelint-disable scss/comment-no-empty
 // These are the generic stylings for forms of any type.
 // If you're styling something specific to the page editing interface,
 // it probably ought to go in layouts/page-editor.scss
@@ -380,6 +381,7 @@ li.inline:first-child {
 }
 
 // Transitions
+// stylelint-disable-next-line no-duplicate-selectors
 .help {
     @include transition(opacity 0.2s ease);
 }

@@ -1,11 +1,9 @@
 // Based upon the fine work and thoughts from Bootstrap v4.
-//
 // Copyright 2011-2018 The Bootstrap Authors
 // Copyright 2011-2018 Twitter, Inc.
 // Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
 
 // Name of the next breakpoint, or null for the last breakpoint.
-//
 //    >> breakpoint-next(sm)
 //    md
 @function breakpoint-next($name) {
@@ -15,7 +13,6 @@
 }
 
 // Minimum breakpoint width. Null for the smallest (first) breakpoint.
-//
 //    >> breakpoint-min(sm)
 //    50em
 @function breakpoint-min($name) {
@@ -24,7 +21,6 @@
 }
 
 // Maximum breakpoint width. Null for the largest (last) breakpoint.
-//
 //    >> breakpoint-max(sm)
 //    56.1875em
 @function breakpoint-max($name) {
