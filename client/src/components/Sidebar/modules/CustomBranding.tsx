@@ -19,7 +19,7 @@ const CustomBranding: React.FunctionComponent<CustomBrandingProps> = ({ homeUrl,
   return (
     <a
       className="sidebar-custom-branding"
-      href="#"
+      href={homeUrl}
       onClick={onClick}
       aria-label={strings.DASHBOARD}
       dangerouslySetInnerHTML={{ __html: html }}

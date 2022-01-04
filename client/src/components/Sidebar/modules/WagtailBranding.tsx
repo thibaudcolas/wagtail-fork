@@ -60,7 +60,7 @@ const WagtailBranding: React.FunctionComponent<WagtailBrandingProps> = ({ homeUr
 
   return (
     <a
-      className={desktopClassName} href="#" aria-label={strings.DASHBOARD}
+      className={desktopClassName} href={homeUrl} aria-label={strings.DASHBOARD}
       onClick={onClick} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}
     >
       <div className="sidebar-wagtail-branding__icon-wrapper">

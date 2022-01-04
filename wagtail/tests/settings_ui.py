@@ -7,3 +7,5 @@ DEBUG = True
 DATABASES['default']['NAME'] = 'ui_tests.db'  # noqa
 
 WAGTAIL_EXPERIMENTAL_FEATURES = {'slim-sidebar'}
+
+ALLOWED_HOSTS = ['*']
