@@ -171,10 +171,11 @@ export const Sidebar: React.FunctionComponent<SidebarProps> = (
     <>
       <aside
         id="sidebar"
+        data-sidebar
         aria-label={strings.SIDEBAR}
         className={
           'sidebar'
-          + (slim ? ' sidebar--slim' : '')
+          + (slim || isMobile ? ' sidebar--slim' : '')
           + (isMobile ? ' sidebar--mobile' : '')
           + ((isMobile && !visibleOnMobile) ? ' sidebar--hidden' : '')
         }

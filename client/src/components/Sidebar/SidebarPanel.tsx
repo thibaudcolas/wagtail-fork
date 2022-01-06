@@ -30,7 +30,7 @@ export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = (
   }
 
   return (
-    <div className={className} style={style}>
+    <div className={className} style={style} data-sidebar-panel>
       {children}
     </div>
   );

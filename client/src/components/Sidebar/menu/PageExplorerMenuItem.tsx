@@ -75,7 +75,7 @@ export const PageExplorerMenuItem: React.FunctionComponent<MenuItemProps<PageExp
 
   return (
     <li className={className}>
-      <Button dialogTrigger={true} onClick={onClick} className="sidebar-menu-item__link">
+      <Button dialogTrigger={true} onClick={onClick} className="sidebar-menu-item__link page-explorer-menu-item">
         <Icon name="folder-open-inverse" className="icon--menuitem" />
         <span className="menuitem-label">{item.label}</span>
         <Icon className={sidebarTriggerIconClassName} name="arrow-right" />

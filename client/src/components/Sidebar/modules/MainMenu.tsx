@@ -127,10 +127,26 @@ export const Menu: React.FunctionComponent<MenuProps> = (
       }
     };
 
+    const onClickOutside = (e: MouseEvent | TouchEvent) => {
+      const sidebar = document.querySelector('[data-sidebar]');
+
+      const isInside = sidebar.contains(e.target as Node);
+      if (!isInside) {
+        dispatch({
+          type: 'set-navigation-path',
+          path: ''
+        });
+      }
+    };
+
     document.addEventListener('keydown', onKeydown);
+    document.addEventListener('mousedown', onClickOutside);
+    document.addEventListener('touchend', onClickOutside);
 
     return () => {
       document.removeEventListener('keydown', onKeydown);
+      document.removeEventListener('mousedown', onClickOutside);
+      document.removeEventListener('touchend', onClickOutside);
     };
   }, []);
 

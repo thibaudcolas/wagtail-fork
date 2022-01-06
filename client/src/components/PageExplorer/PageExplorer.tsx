@@ -7,6 +7,8 @@ import * as actions from './actions';
 import { State as NodeState } from './reducers/nodes';
 import { State } from './reducers';
 
+import Button from '../../components/Button/Button';
+
 import PageExplorerPanel from './PageExplorerPanel';
 
 interface PageExplorerProps {
@@ -28,14 +30,19 @@ const PageExplorer: React.FunctionComponent<PageExplorerProps> = ({
   onClose,
   navigate,
 }) => ((isVisible && currentPageId) ? (
-  <PageExplorerPanel
-    depth={depth}
-    page={nodes[currentPageId]}
-    nodes={nodes}
-    gotoPage={gotoPage}
-    onClose={onClose}
-    navigate={navigate}
-  />
+  <>
+    <Button onClick={onClose} className="c-page-explorer__close">
+      Close
+    </Button>
+    <PageExplorerPanel
+      depth={depth}
+      page={nodes[currentPageId]}
+      nodes={nodes}
+      gotoPage={gotoPage}
+      onClose={onClose}
+      navigate={navigate}
+    />
+  </>
 ) : null);
 
 const mapStateToProps = (state: State) => ({
