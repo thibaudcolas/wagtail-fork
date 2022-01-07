@@ -180,7 +180,10 @@ module.exports = function exports(env, argv) {
         {
           // Legacy support for font icon loading, to be removed.
           test: /\.(woff)$/i,
-          type: 'asset/inline',
+          generator: {
+            emit: false,
+            filename: 'wagtailadmin/fonts/[name][ext]',
+          },
         },
         {
           test: /\.(svg)$/i,
