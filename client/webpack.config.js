@@ -27,7 +27,9 @@ const exposedDependencies = {
   'draft-js': 'DraftJS',
 };
 
-module.exports = function exports() {
+module.exports = function exports(env, argv) {
+  const isProduction = argv.mode === 'production';
+
   const entrypoints = {
     'admin': [
       'collapsible',
@@ -176,19 +178,22 @@ module.exports = function exports() {
           exclude: /node_modules/,
         },
         {
+          // Legacy support for font icon loading, to be removed.
+          test: /\.(woff)$/i,
+          type: 'asset/inline',
+        },
+        {
+          test: /\.(svg)$/i,
+          type: 'asset/inline',
+        },
+        {
           test: /\.(scss|css)$/,
           use: [
             MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-              },
-            },
+            'css-loader',
             {
               loader: 'postcss-loader',
               options: {
-                sourceMap: true,
                 postcssOptions: {
                   plugins: [
                     "autoprefixer",
@@ -197,16 +202,7 @@ module.exports = function exports() {
                 }
               },
             },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
-                implementation: sass,
-                sassOptions: {
-                  outputStyle: 'compressed',
-                },
-              },
-            },
+            'sass-loader'
           ],
         },
       ].concat(Object.keys(exposedDependencies).map((name) => {
@@ -244,7 +240,7 @@ module.exports = function exports() {
     },
 
     // See https://webpack.js.org/configuration/devtool/.
-    devtool: 'source-map',
+    devtool: isProduction ? false : 'source-map',
 
     // For development mode only.
     watchOptions: {
