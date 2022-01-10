@@ -242,7 +242,7 @@ module.exports = function exports(env, argv) {
     },
 
     // See https://webpack.js.org/configuration/devtool/.
-    devtool: isProduction ? false : 'source-map',
+    devtool: isProduction ? false : 'eval-cheap-module-source-map',
 
     // For development mode only.
     watchOptions: {
