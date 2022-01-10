@@ -1,7 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const sass = require('sass');
 
 // Generates a path to the output bundle to be loaded in the browser.
 const getOutputPath = (app, folder, filename) => {
