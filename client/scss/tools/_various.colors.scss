@@ -1,8 +1,8 @@
 @use "sass:math";
-
 @use "sass:color";
 @use "sass:list";
 @use "sass:meta";
+
 // $color is either a color or an hsl tuple
 @mixin define-color($name, $color) {
     $h: null;
