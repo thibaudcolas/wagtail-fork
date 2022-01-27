@@ -138,7 +138,7 @@ select::-ms-expand {
     &::before {
         font-family: wagtail;
         vertical-align: -10%;
-        content: map-get($icons, 'cross');
+        content: map.get($icons, 'cross');
     }
 }
 
