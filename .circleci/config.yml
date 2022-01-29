@@ -146,6 +146,7 @@ workflows:
       jobs:
         - backend
         - frontend
+        - frontend_windows
         - ui_tests:
             requires:
               - frontend
