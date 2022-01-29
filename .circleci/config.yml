@@ -1,5 +1,8 @@
 version: 2
 
+orbs:
+  win: circleci/windows@2.2.0
+
 jobs:
   backend:
     docker:
@@ -56,6 +59,21 @@ jobs:
       - run: npm run lint:css
       - run: npm run test:unit:coverage -- --runInBand
       - run: bash <(curl -s https://codecov.io/bash) -F frontend
+
+  frontend_windows:
+    executor:
+      name: win/default
+    steps:
+      - checkout
+      - restore_cache:
+          key: frontend_windows-v1-{{ checksum "package-lock.json" }}
+      # Only install if node_modules wasn’t cached.
+      - run: if ( -not (Test-Path -Path 'node_modules' -PathType Container) ) { npm ci }
+      - save_cache:
+          paths:
+            - node_modules
+          key: frontend_windows-v1-{{ checksum "package-lock.json" }}
+      - run: npm run build
 
   ui_tests:
     docker:
