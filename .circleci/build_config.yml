@@ -146,12 +146,9 @@ workflows:
               - frontend
 
     nightly:
+      when:
+        and:
+          - equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
+          - equal: [ "nightly", << pipeline.schedule.name >> ]
       jobs:
         - nightly-build
-      triggers:
-        - schedule:
-            cron: "0 0 * * *"
-            filters:
-              branches:
-                only:
-                  - main
