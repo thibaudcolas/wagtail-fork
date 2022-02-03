@@ -1,5 +1,7 @@
 version: 2.1
 
+# This configuration determines what workflows to run based on changed files.
+# It can only have one workflow – all others must be in `continue_config.yml`.
 setup: true
 
 orbs:
@@ -10,7 +12,7 @@ workflows:
       jobs:
         - path-filtering/filter:
             base-revision: main
-            config-path: .circleci/build_config.yml
+            config-path: .circleci/continue_config.yml
             mapping: |
               (wagtail/.*|setup\.py|setup\.cfg) backend true
               (client/.*|docs/_static/.*|gulpfile.js/.*|wagtail/.*/static_src/.*|.eslintrc|.nvmrc|.stylelintrc.yaml|package.json|package-lock.json|tsconfig.json) frontend true
