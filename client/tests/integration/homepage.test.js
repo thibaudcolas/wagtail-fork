@@ -11,10 +11,11 @@ describe('Homepage', () => {
     expect(pageHeaderValue).toContain('Welcome to the Test Site Wagtail CMS');
   });
 
-  it('axe', async () => {
+  it('loads', async () => {
     await expect(page).toPassAxeTests({
       exclude: '.stats, .skiplink, #wagtail-sidebar, .sidebar__collapse-toggle',
     });
+    await expect(page).toTakePercySnapshot();
   });
 
   it('axe page explorer', async () => {
