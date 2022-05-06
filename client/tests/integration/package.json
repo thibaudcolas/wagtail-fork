@@ -2,6 +2,7 @@
   "name": "wagtail-client-tests-integration",
   "private": true,
   "devDependencies": {
+    "@percy/sdk-utils": "^1.1.2",
     "@wordpress/jest-puppeteer-axe": "^4.0.1",
     "expect-puppeteer": "^6.1.0",
     "jest": "^27.5.1",

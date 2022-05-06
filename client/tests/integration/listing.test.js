@@ -9,10 +9,11 @@ describe('Listing', () => {
     );
   });
 
-  it('axe', async () => {
+  it('loads', async () => {
     await expect(page).toPassAxeTests({
       exclude:
         '.skiplink, .sidebar__collapse-toggle, #wagtail-sidebar, a[href$="dummy-button"]',
     });
+    await expect(page).toTakePercySnapshot();
   });
 });

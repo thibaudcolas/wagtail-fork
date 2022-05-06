@@ -66,6 +66,8 @@ jobs:
       - attach_workspace:
           at: ~/project
       - restore_cache:
+          key: frontend-v1-{{ checksum "package-lock.json" }}
+      - restore_cache:
           key: pipenv-v1-{{ checksum "setup.py" }}
       # Only install if .venv wasn’t cached.
       - run: |
@@ -99,9 +101,17 @@ jobs:
             DJANGO_SUPERUSER_USERNAME: admin
             DJANGO_SUPERUSER_PASSWORD: changeme
       - run:
-          command: npm run test:integration -- --runInBand --reporters=default --reporters=jest-junit
+          command: PERCY_TOKEN=${PERCY_TOKEN_PUPPETEER} npm run test:integration -- --runInBand --reporters=default --reporters=jest-junit
           environment:
             JEST_JUNIT_OUTPUT_DIR: reports/jest
+      # Serve the Storybook build with a local server + proxy, rather than Django, as Percy only
+      # supports testing Storybook when served at the root.
+      # See https://github.com/percy/percy-storybook/discussions/562.
+      - run:
+          command: npx --yes http-server@14 http-server storybook-static --proxy http://localhost:8000 --port 8002
+          background: true
+      - run: npm run storybook:build
+      - run: PERCY_TOKEN=${PERCY_TOKEN_STORYBOOK} ./node_modules/.bin/percy storybook http://127.0.0.1:8002
       - store_test_results:
           path: ./reports/jest
 
