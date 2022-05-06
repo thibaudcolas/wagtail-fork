@@ -154,13 +154,13 @@ li.focused > .help {
 
 .required .field > label:after,
 label.required:after {
-  content: '*';
+  content: '(required)';
   color: $color-red;
   font-weight: bold;
   display: inline-block;
   margin-inline-start: 0.5em;
   line-height: 1em;
-  font-size: 13px;
+  font-size: 1rem;
 }
 
 .error input,
@@ -261,7 +261,10 @@ label.required:after {
 .date_field,
 .date_time_field {
   .input:before {
-    content: map.get($icons, 'date'); // UI-Redesign: To be removed
+    width: 16px;
+    height: 16px;
+    mask-image: url('#{$images-root}icons/tag.svg');
+    mask-repeat: no-repeat;
   }
 }
 
