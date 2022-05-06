@@ -3,7 +3,7 @@ describe('Editor', () => {
     '.skiplink, .sidebar__collapse-toggle, #wagtail-sidebar, li[aria-controls^="tab-"]';
   beforeAll(async () => {
     await page.goto(`${TEST_ORIGIN}/admin/pages/add/demosite/standardpage/2/`);
-  });
+  }, 10000);
 
   it('has the right heading', async () => {
     const pageHeader = await page.$('h1');
@@ -11,13 +11,14 @@ describe('Editor', () => {
     expect(pageHeaderValue).toContain('New: Standard page');
   });
 
-  it('axe', async () => {
+  it('loads', async () => {
     await expect(page).toPassAxeTests({
       exclude: `${globalEditorExcludes}, [aria-describedby^="placeholder-"]`,
     });
+    await expect(page).toTakePercySnapshot();
   });
 
-  it('axe InlinePanel', async () => {
+  it('InlinePanel', async () => {
     const toggle = await page.$('.sidebar__collapse-toggle');
     toggle.click();
     const trigger = await page.$('#id_carousel_items-ADD');
@@ -25,9 +26,10 @@ describe('Editor', () => {
     await expect(page).toPassAxeTests({
       exclude: `${globalEditorExcludes}, [aria-describedby^="placeholder-"]`,
     });
+    await expect(page).toTakePercySnapshot();
   });
 
-  it('axe embed chooser', async () => {
+  it('embed chooser', async () => {
     const trigger = await page.$('.Draftail-Editor [name="EMBED"]');
     await Promise.all([
       trigger.click(),
@@ -36,13 +38,14 @@ describe('Editor', () => {
     await expect(page).toPassAxeTests({
       exclude: `${globalEditorExcludes}, [aria-describedby^="placeholder-"], .modal`,
     });
+    await expect(page).toTakePercySnapshot();
     await Promise.all([
       await page.keyboard.press('Escape'),
       page.waitForSelector('.Draftail-Editor--readonly', { hidden: true }),
     ]);
   });
 
-  it('axe image chooser', async () => {
+  it('image chooser', async () => {
     const trigger = await page.$('.Draftail-Editor [name="IMAGE"]');
     await Promise.all([
       trigger.click(),
@@ -51,13 +54,14 @@ describe('Editor', () => {
     await expect(page).toPassAxeTests({
       exclude: `${globalEditorExcludes}, [aria-describedby^="placeholder-"], .modal`,
     });
+    await expect(page).toTakePercySnapshot();
     await Promise.all([
       await page.keyboard.press('Escape'),
       page.waitForSelector('.Draftail-Editor--readonly', { hidden: true }),
     ]);
   });
 
-  it('axe page chooser', async () => {
+  it('page chooser', async () => {
     const trigger = await page.$('.Draftail-Editor [name="LINK"]');
     await Promise.all([
       trigger.click(),
@@ -66,6 +70,7 @@ describe('Editor', () => {
     await expect(page).toPassAxeTests({
       exclude: `${globalEditorExcludes}, [aria-describedby^="placeholder-"], .modal`,
     });
+    await expect(page).toTakePercySnapshot();
     await Promise.all([
       await page.keyboard.press('Escape'),
       page.waitForSelector('.Draftail-Editor--readonly', { hidden: true }),

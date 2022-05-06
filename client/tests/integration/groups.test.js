@@ -1,4 +1,4 @@
-describe('Groups', () => {
+describe.only('Groups', () => {
   beforeAll(async () => {
     await page.goto(`${TEST_ORIGIN}/admin/groups/2/`);
   }, 10000);
@@ -7,9 +7,10 @@ describe('Groups', () => {
     expect(await page.title()).toContain('Wagtail - Editing Editors');
   });
 
-  it('axe', async () => {
+  it('loads', async () => {
     await expect(page).toPassAxeTests({
       exclude: '.skiplink, .sidebar__collapse-toggle, #wagtail-sidebar',
     });
+    await expect(page).toTakePercySnapshot();
   });
 });
