@@ -1,4 +1,6 @@
 .workflow-pages-listing {
+  max-width: 1024px - 50px;
+
   .field label {
     @include visuallyhidden;
   }
@@ -13,10 +15,6 @@
     // stylelint-disable-next-line declaration-no-important
     font-size: 2.5em !important;
   }
-}
-
-.workflow-pages-listing {
-  max-width: 1024px - 50px;
 
   .admin_page_chooser .field-content {
     width: 100%; // so that 'choose another page' button displays in its entirety

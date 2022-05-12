@@ -45,6 +45,7 @@
       tr > td {
         background-color: inherit;
 
+        // stylelint-disable-next-line max-nesting-depth
         a.edit-obj {
           color: inherit;
           font-weight: 600;
@@ -159,6 +160,7 @@
       &.col12 {
         padding-inline-end: 0;
 
+        // stylelint-disable-next-line max-nesting-depth
         tbody td:last-child {
           padding-inline-end: 50px;
         }

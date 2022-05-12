@@ -175,6 +175,7 @@ $desktop-nice-padding: 100px;
       margin: 0 (-$desktop-nice-padding);
 
       .iconfield {
+        // stylelint-disable-next-line max-nesting-depth
         .input:before {
           display: inline-block;
           position: absolute;
@@ -190,6 +191,7 @@ $desktop-nice-padding: 100px;
           font-size: 1.3rem;
         }
 
+        // stylelint-disable-next-line max-nesting-depth
         input {
           padding-inline-start: ($desktop-nice-padding + 50px);
         }
