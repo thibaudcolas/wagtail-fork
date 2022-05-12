@@ -1,12 +1,9 @@
-@import '../../../../../../client/scss/settings';
-@import '../../../../../../client/scss/tools';
-
-.breadcrumb {
+.modeladmin .breadcrumb {
   margin: -1.2em 0 2em;
 }
 
 @include media-breakpoint-up(sm) {
-  .breadcrumb {
+  .modeladmin .breadcrumb {
     margin-top: -1.8em;
   }
 }

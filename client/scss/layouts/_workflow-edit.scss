@@ -1,7 +1,4 @@
-@import '../../../../../../client/scss/tools/mixins.general';
-@import '../../../../../../client/scss/settings/variables';
-
-.listing {
+.workflow-pages-listing {
   .field label {
     @include visuallyhidden;
   }
