@@ -268,13 +268,13 @@
 
   &.required {
     > .title-wrapper label:after {
-      content: '*';
+      content: '(required)';
       color: $color-red;
       font-weight: bold;
       display: inline-block;
       margin-inline-start: 0.5em;
       line-height: 1em;
-      font-size: 13px;
+      font-size: 1rem;
     }
   }
 
